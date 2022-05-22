@@ -16,7 +16,9 @@ import Item from "./Item";
 // const List = ({ list }) =>
 //   list.map((item) => <Item key={item.objectID} item={item} />);
 
-const List = ({ list }) =>
-  list.map(({ objectID, ...item }) => <Item key={objectID} {...item} />);
+const List = ({ list, onRemoveItem }) =>
+  list.map((item) => (
+    <Item key={item.objectID} item={item} onRemoveItem={onRemoveItem} />
+  ));
 
 export default List;
